@@ -11193,7 +11193,6 @@
     },
     "textures": {
       "default": "textures/entity/steve",
-      "cape": "textures/entity/cape_invisible"
     },
     "geometry": {
       "default": {

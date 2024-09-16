@@ -3,6 +3,7 @@ const TWEEN = require('@tweenjs/tween.js')
 
 const Entity = require('./entity/Entity')
 const { dispose3 } = require('./dispose')
+const { createCanvas } = require('canvas')
 
 function getEntityMesh (entity, scene) {
   if (entity.name) {
@@ -10,9 +11,7 @@ function getEntityMesh (entity, scene) {
       const e = new Entity('1.16.4', entity.name, scene)
 
       if (entity.username !== undefined) {
-        const canvas = document.createElement('canvas')
-        canvas.width = 500
-        canvas.height = 100
+        const canvas = createCanvas(500, 100)
 
         const ctx = canvas.getContext('2d')
         ctx.font = '50pt Arial'
