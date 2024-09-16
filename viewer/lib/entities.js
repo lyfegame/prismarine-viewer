@@ -11,21 +11,31 @@ function getEntityMesh (entity, scene) {
       const e = new Entity('1.16.4', entity.name, scene)
 
       if (entity.username !== undefined) {
+        // This sprite needs to accomodate usernames up to 16 characters
         const canvas = createCanvas(500, 100)
-
         const ctx = canvas.getContext('2d')
-        ctx.font = '50pt Arial'
-        ctx.fillStyle = '#000000'
-        ctx.textAlign = 'left'
-        ctx.textBaseline = 'top'
-
         const txt = entity.username
-        ctx.fillText(txt, 100, 0)
+        ctx.font = '20pt monospace'
+        ctx.textAlign = 'center'
+
+        const textWidth = ctx.measureText(txt).width 
+        const padding = 10 
+
+        // Add a transparent black rectangle around the text
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'  
+        const rectX = (canvas.width - textWidth - padding * 2) / 2
+        ctx.fillRect(rectX, 15, textWidth + padding * 2, 30)  
+
+        // Add username over black rectangle
+        ctx.fillStyle = '#FFFFFF' 
+        const textX = 90 + (320 / 2) 
+        ctx.fillText(txt, textX, 40)
 
         const tex = new THREE.Texture(canvas)
         tex.needsUpdate = true
         const spriteMat = new THREE.SpriteMaterial({ map: tex })
         const sprite = new THREE.Sprite(spriteMat)
+        sprite.scale.set(5, 1, 1)
         sprite.position.y += entity.height + 0.6
 
         e.mesh.add(sprite)
