@@ -24,6 +24,7 @@
   "dependencies": {
     "@tweenjs/tween.js": "^23.1.1",
     "canvas": "^2.6.1",
+    "node-canvas-webgl": "PrismarineJS/node-canvas-webgl",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "minecraft-data": "^3.0.0",
@@ -47,7 +48,6 @@
     "minecrafthawkeye": "^1.2.5",
     "mineflayer": "^4.0.0",
     "mineflayer-pathfinder": "^2.0.0",
-    "node-canvas-webgl": "PrismarineJS/node-canvas-webgl",
     "prismarine-schematic": "^1.2.0",
     "prismarine-viewer": "file:./",
     "process": "^0.11.10",
