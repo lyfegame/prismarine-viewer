@@ -23,11 +23,11 @@
   },
   "dependencies": {
     "@tweenjs/tween.js": "^23.1.1",
-    "canvas": "^2.6.1",
-    "node-canvas-webgl": "PrismarineJS/node-canvas-webgl",
+    "canvas": "^2.11.2",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "minecraft-data": "^3.0.0",
+    "node-canvas-webgl": "^0.3.0",
     "prismarine-block": "^1.7.3",
     "prismarine-chunk": "^1.22.0",
     "prismarine-world": "^3.3.1",
